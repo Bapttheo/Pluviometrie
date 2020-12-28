@@ -12,7 +12,7 @@ import matplotlib.dates as pltd
 
 import sqlite3
 
-PORT = 8080
+PORT = 8000
 
 # Définition du nouveau handler
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
