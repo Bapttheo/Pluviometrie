@@ -6,9 +6,8 @@ import socketserver
 from urllib.parse import urlparse, parse_qs, unquote
 import json
 
-import matplotlib.pyplot as plt
 import datetime as dt
-import matplotlib.dates as pltd
+
 
 import sqlite3
 
