@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr"></html>
+<head>
+	
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,900&display=swap" rel="stylesheet">
+	<script src="leaflet.js"> // insertion bibliothèque Leaflet : http://leafletjs.com/ </script>
+	<link rel="stylesheet" type="text/css" href="mystyle.css"/>
+	<link rel="stylesheet" type="text/css" href="leaflet.css"/>
+	<title>Pluviométrie Lyon</title>
+	<link rel="icon" type="image/png" href="/images/logo_icon.png"/>
+	
+</head>
+
+
+<!-- Récupération des données avec le chargement de la page -->
+<body onload="load_data()">  
+
+	<div class="topbar">
+		<div class="logo"><img src="images/logo.png" alt="goutte" id="logo"></div>
+
+    	<div class="titre"><h1>Pluviométrie du Grand Lyon</h1></div>    
+
+		<div class="credit" id="credit">
+      		À propos
+      	</div>
+	</div>
+
+  
+	<p class="explications">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium maxime ipsa repellendus harum odio ea modi atque ipsum eligendi repellat, reprehenderit placeat doloremque minima adipisci dicta ab! Amet, nam corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus unde debitis accusantium quod dicta optio autem, expedita repellat nesciunt quos, aliquid eius. Dolor, perspiciatis blanditiis?
+	</p>
+  
+
+	<div class="main">
+
+    	<div id="map"></div> <!-- Carte interactive des paramètres -->
+
+		<div class="FormBox"> <!-- Form des paramètres -->
+
+			<div id="form_title">Paramètres</div>
+	
+			<form action="/" id="form">
+		
+			<div class="champ">
+				<br>
+				Lieu <br>
+				<input type="text" name="region" value="ECL" id="lieu" placeholder="Station" required class="in"/>
+			</div>
+
+			<div class="champ">
+				De <br>
+				<input type="datetime-local" name="debut" id="debut" value="2017-01-01T12:00" placeholder="Date de début" required class="in"/>
+			</div>
+
+			<div class="champ">
+				À <br>
+				<input type="datetime-local" name="fin" id="fin" placeholder="Date de fin" value="2019-01-01T12:59" required class="in"/>
+			</div>
+
+			<div class="champ">
+				Pas (en minutes) <br>
+				<input type="number" name="pas" id="pas" value=1 placeholder="Valeur du pas" class="in"/>
+				<br><br>
+			</div>
+			
+			<div class="type">
+				<div class="champ">
+					Avec cache <br>
+					<input type="radio" value="None" id="interactif" name="type" checked/>
+				</div>
+
+				<div class="champ">
+					Sans cache <br>
+					<input type="radio" value="None" id="image" name="type" />
+				</div>
+			</div> 
+			
+			<div id="button" class="button">
+				Actualiser
+			</div>
+
+			</form>
+		</div>
+
+		<div class="graphique">
+			<img src="images/none.png" alt="none" id="graph">
+
+			<div id="reponse">
+				<p text-align ="center"></p>
+			</div>
+		</div>
+
+		
+
+	</div>
+</body>
+
+<!-- Credits qui s'affichent poctuellement -->
+<footer id="footer"> 
+
+	<a href="https://www.ec-lyon.fr/" target="_blank">
+		<div class="logo_centrale"><img src="images/logo_ecl.png" alt="goutte" id="centrale_logo"></div>
+	</a>
+	<div class="legende"><h3>Projet application WEB - Inf TC3 - Gr. C2a - Projet C</h3></div>    
+
+	<a href="https://github.com/Bapttheo/Pluviometrie" target="_blank">
+		<div class="credit">GitHub Repository</div>
+	</a>
+
+</footer>
+
+<!-- Fichier JavaScript attaché -->
+<script type="text/javascript" src="myapp.js"></script> 
