@@ -73,8 +73,10 @@ body {
 	margin-top: 0px;
 	margin-left: 1em;
 	margin-right: 1em;
-	margin-bottom: 1em;
-	font-size: 1.0em;
+	margin-bottom: 5em;
+	color: rgb(99, 99, 99);
+	font-size:1rem;
+	text-align: justify;
 }
 
 .main{
@@ -221,6 +223,10 @@ body {
 	align-items: center;
 	margin-bottom: 0.5em;
 	padding: 0.5em;  
+}
+
+.legende{
+	text-align: center;
 }
 
 #centrale_logo {
