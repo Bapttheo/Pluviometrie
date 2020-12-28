@@ -12,7 +12,7 @@ import datetime as dt
 
 import sqlite3
 
-port = int(os.environ.get("PORT", 8080))
+PORT = int(os.environ.get("PORT", 8080))
 
 # Définition du nouveau handler
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
