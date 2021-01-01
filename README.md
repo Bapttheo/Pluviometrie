@@ -1,6 +1,6 @@
 # Pluviometrie
 
-Version en ligne : http://www.pluvio.me
+Version en ligne : http://pluvio.me
 
 Commentaires :
     *L'option avec ou sans cache permet pour la version hébergée en ligne de continuer à fonctionner
