@@ -35,7 +35,7 @@ function load_data () {
 		console.log("Marqueurs ajoutés sur la carte !")
 	};
 
-	// Envoi de la requête Ajax pour la récupération de la liste des lieux insolites
+	// Envoi de la requête Ajax pour la récupération de la liste des lieux
 	console.log("Envoie requette /location...")
 	xhr.open('GET','/location',true);
 	xhr.send();
@@ -44,53 +44,26 @@ function load_data () {
 
 
 function OnMarkerClick (e) {
-	/*
+	console.log("HERE")
     var xhr = new XMLHttpRequest();
-  var image =  document.querySelector('#reponse img'),
-        legende = document.querySelector('#reponse p');
-  xhr.onload = function() {   // fonction callback
-      var data = JSON.parse(this.responseText)
-      image.src = data.img;
-      image.alt = data.title;
-      legende.innerHTML = data.title;
-      };
-    xhr.open('GET','/ponctualite/'+e.target.idreg,true);  // on récupère la courbe par un appel au serveur
-	xhr.send();
-	*/
-}
-
-
-
-document.getElementById('button').addEventListener('click', envoiformulaire);
-
-function envoiformulaire(e) {
-	var xhr = new XMLHttpRequest(); 
-	// On récupère les paramètres
-	var lieu = document.getElementById('lieu').value,
-		debut = document.getElementById('debut').value,
-		fin = document.getElementById('fin').value,
-		pas = document.getElementById('pas').value,
-		interactif = document.getElementById('interactif').value
-	;
-
-	if  ((lieu!=="") && (debut!=="") && (fin!=="") && (pas!=="")) {
-		xhr.open('GET','/toctoc?'+'Lieu='+lieu+'&'+'Debut='+debut+'&'+'Fin='+fin+'&'+'Pas='+pas+'&'+'Interactif='+interactif,true);  // requête au serveur avec une "query string"
-		xhr.send();
-
-		xhr.onload = function() {   // fonction callback
-			// récupération des données renvoyées par le serveur
-			var data = JSON.parse(this.responseText);
-			// affichage dans la zone 'reponse' des données récupérées par l'appel au serveur
-			document.getElementById('reponse').innerHTML = "Données de "  + data.lieu + ' entre le ' + data.debut + " et le " + data.fin + " avec un pas de " + data.pas;
-			
-			var x = document.getElementById("graph");
-			x.setAttribute("src", "images/1.png");
+	  xhr.onload = function() {   // fonction callback
+		// On change l'image affichée sur le site
+		var data = JSON.parse(this.responseText)
+		console.log(data)
+		console.log(data.nom)
+		var x = document.getElementById("graph");
+		x.setAttribute("src", data.nom);
 		};
-	}
-	else {
-		console.log("Formulaire pas remplit entièrement")
-	}
+	console.log(e.target.idnum)
+	var debut = document.getElementById('debut').value,
+		fin = document.getElementById('fin').value,
+		pas = document.getElementById('pas').value
+	;	
+    xhr.open('GET','/click/'+e.target.idnum+"/"+debut+"/"+fin+"/"+pas,true);  // on récupère la courbe par un appel au serveur
+	xhr.send();
+	
 }
+
 
 // Gestion annimation du footer
 document.getElementById("credit").addEventListener("click", start);

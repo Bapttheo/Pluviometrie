@@ -29,60 +29,47 @@
 
   
 	<p class="explications">
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium maxime ipsa repellendus harum odio ea modi atque ipsum eligendi repellat, reprehenderit placeat doloremque minima adipisci dicta ab! Amet, nam corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus unde debitis accusantium quod dicta optio autem, expedita repellat nesciunt quos, aliquid eius. Dolor, perspiciatis blanditiis?
+		Compilation et affichage des données de pluviométrie du Grand Lyon sur une trentaine de stations réparties dans la région. Cliquez sur les stations sur la carte pour afficher le relevé de donné correspondant au paramètres selectionnés.
 	</p>
   
 
 	<div class="main">
 
-    	<div id="map"></div> <!-- Carte interactive des paramètres -->
+		<div class="left">
+			<div id="map"></div> <!-- Carte interactive  -->
 
-		<div class="FormBox"> <!-- Form des paramètres -->
+			<div class="FormBox"> <!-- Form des paramètres -->
 
-			<div id="form_title">Paramètres</div>
-	
-			<form action="/" id="form">
+				<div id="form_title">Paramètres</div>
 		
-			<div class="champ">
-				<br>
-				Lieu <br>
-				<input type="text" name="region" value="ECL" id="lieu" placeholder="Station" required class="in"/>
-			</div>
-
-			<div class="champ">
-				De <br>
-				<input type="datetime-local" name="debut" id="debut" value="2017-01-01T12:00" placeholder="Date de début" required class="in"/>
-			</div>
-
-			<div class="champ">
-				À <br>
-				<input type="datetime-local" name="fin" id="fin" placeholder="Date de fin" value="2019-01-01T12:59" required class="in"/>
-			</div>
-
-			<div class="champ">
-				Pas (en minutes) <br>
-				<input type="number" name="pas" id="pas" value=1 placeholder="Valeur du pas" class="in"/>
-				<br><br>
-			</div>
+				<form action="/" id="form">
 			
-			<div class="type">
+				
+	
 				<div class="champ">
-					Avec cache <br>
-					<input type="radio" value="None" id="interactif" name="type" checked/>
+					De <br>
+					<input type="datetime-local" name="debut" id="debut" value="2014-01-01T12:00" placeholder="Date de début" required class="in"/>
 				</div>
-
+	
 				<div class="champ">
-					Sans cache <br>
-					<input type="radio" value="None" id="image" name="type" />
+					À <br>
+					<input type="datetime-local" name="fin" id="fin" placeholder="Date de fin" value="2020-01-01T12:00" required class="in"/>
 				</div>
-			</div> 
-			
-			<div id="button" class="button">
-				Actualiser
+	
+				<div class="champ">
+					Pas (en minutes) <br>
+					<input type="number" name="pas" id="pas" value=10080 placeholder="Valeur du pas" class="in"  min="20" max="5256000"/>
+					<br><br>
+				</div>
+				
+	
+	
+				</form>
 			</div>
-
-			</form>
 		</div>
+    	
+
+		
 
 		<div class="graphique">
 			<img src="images/none.png" alt="none" id="graph">
